@@ -146,7 +146,7 @@ const step = () => {
     } else {
         // Si ha comido aumentamos el contador y no retiramos el último elemento.
         score++;
-        scoreCounter.textContent = `SCORE ${score}`;
+        updateScore();
         // Generamos un nuevo orbe.
         generateEnergy();
     }
@@ -156,12 +156,12 @@ const step = () => {
 const endGame = () => {
     // Actualizamos la mejor puntuación.
     if (best < score) best = score;
-    bestCounter.innerText = `BEST ${best}`;
+    bestCounter.textContent = `BEST ${best}`;
     // Detenemos la ejecución del flujo del juego.
     clearInterval(interval);
     // Mostramos el overlay.
     const lossText = `Score: ${score} \nPress START`;
-    overlayText.innerText = lossText;
+    overlayText.textContent = lossText;
     overlay.className = 'overlay';
     running = !running;
 }
@@ -186,7 +186,15 @@ const resetGame = () => {
     // Generamos cadena de inicial.
     chain.push({x: 7, y: 7});
     chain.push({x: 6, y: 7});
-    scoreCounter.textContent = `SCORE: ${score}`;
+    updateScore();
+}
+
+/**
+ * Función que actualiza el contador de puntos.
+ */
+const updateScore = () => {
+    scoreCounter.textContent = `SCORE ${score}`;
+
 }
 
 /**
