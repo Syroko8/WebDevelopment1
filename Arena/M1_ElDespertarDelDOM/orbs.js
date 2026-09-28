@@ -193,9 +193,6 @@ const resetGame = () => {
  * que haga un giro de 180º.
  */
 const changeDirection = (newDirection) => {
-    // Si no estamos jugando, no haremos nada.
-    if (!running) return; 
-
     // Comprobamos que no se esté intentando dar la vuelta.
     const newDirectionCoord = directions[newDirection];
     const actualDirection = directions[lastExecutedDirection];
