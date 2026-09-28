@@ -162,7 +162,7 @@ const endGame = () => {
     // Mostramos el overlay.
     const lossText = `Score: ${score} \nPress START`;
     overlayText.innerText = lossText;
-    overlay.className = 'overlay';
+    overlay.classList.toggle('hidden');
     running = !running;
 }
 
@@ -171,7 +171,7 @@ const startGame = () => {
     // Generamos un primer orbe.
     generateEnergy();
     // Ocultamos el overlay.
-    overlay.classList.add('hidden');
+    overlay.classList.toggle('hidden');
     // Iniciamos juego.
     running = !running;
     interval = setInterval(step, speed);
