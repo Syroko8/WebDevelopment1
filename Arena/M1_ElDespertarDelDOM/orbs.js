@@ -56,7 +56,7 @@ const draw = () => {
         cell.style.opacity = 1;
     });
 
-    // Colocamos la enegía en el tablero.
+    // Colocamos la energía en el tablero.
     placeEnergy();
 
     // Pintar cadena de energía.
@@ -108,7 +108,7 @@ const drawChain = () => {
     let i = 0;
     chain.forEach(bodyOrb => {
         const bodyCell = cellAt(bodyOrb.x, bodyOrb.y);
-        /* Disminuimos la opacidad según retrocedamos, con una mínuma de 0.3.
+        /* Disminuimos la opacidad según retrocedamos, con una mínima de 0.3.
         aumentando 0.1 cada vez.*/
         bodyCell.classList.add('chain');
         bodyCell.style.opacity = Math.max(0.3, 1 - i * 0.1);
