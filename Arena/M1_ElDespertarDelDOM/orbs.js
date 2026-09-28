@@ -12,7 +12,7 @@ let lastExecutedDirection = 'right';
 let score = 0;
 let best = 0;
 let running = false;
-let speed = 150;
+const speed = 150;
 let interval = null;
 
 // Elementos del DOM.
@@ -141,7 +141,7 @@ const step = () => {
     chain.unshift(head);
 
     // Si no ha comido, quitamos el último elemento.
-    if (head.x != energy.x || head.y != energy.y) {
+    if (head.x !== energy.x || head.y !== energy.y) {
         chain.pop();
     } else {
         // Si ha comido aumentamos el contador y no retiramos el último elemento.
@@ -180,6 +180,7 @@ const startGame = () => {
 const resetGame = () => {
     score = 0;
     direction = 'right';
+    lastExecutedDirection = 'right';
     // Vaciamos la cadena.
     chain.splice(0, chain.length);
     // Generamos cadena de inicial.
@@ -228,7 +229,7 @@ const swapColorTheme = () => {
 document.addEventListener("keydown", (event) => {
     const key = event.key.toLowerCase();
     // Comprobamos que la tecla esté relacionada con un cambio de sentido.
-    if (keys[key] != undefined) {
+    if (keys[key] !== undefined) {
         /* Evitamos que la web haga scroll al usar las teclas (No debería ocurrir ya que la 
         web no tiene scroll).*/
         event.preventDefault();
