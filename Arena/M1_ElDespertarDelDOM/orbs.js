@@ -56,7 +56,7 @@ const draw = () => {
         cell.style.opacity = 1;
     });
 
-    // Colocamos la enegía en el tablero.
+    // Colocamos la energía en el tablero.
     placeEnergy();
 
     // Pintar cadena de energía.
@@ -108,7 +108,7 @@ const drawChain = () => {
     let i = 0;
     chain.forEach(bodyOrb => {
         const bodyCell = cellAt(bodyOrb.x, bodyOrb.y);
-        /* Disminuimos la opacidad según retrocedamos, con una mínuma de 0.3.
+        /* Disminuimos la opacidad según retrocedamos, con una mínima de 0.3.
         aumentando 0.1 cada vez.*/
         bodyCell.classList.add('chain');
         bodyCell.style.opacity = Math.max(0.3, 1 - i * 0.1);
@@ -146,7 +146,7 @@ const step = () => {
     } else {
         // Si ha comido aumentamos el contador y no retiramos el último elemento.
         score++;
-        scoreCounter.textContent = `SCORE ${score}`;
+        updateScore();
         // Generamos un nuevo orbe.
         generateEnergy();
     }
@@ -156,12 +156,12 @@ const step = () => {
 const endGame = () => {
     // Actualizamos la mejor puntuación.
     if (best < score) best = score;
-    bestCounter.innerText = `BEST ${best}`;
+    bestCounter.textContent = `BEST ${best}`;
     // Detenemos la ejecución del flujo del juego.
     clearInterval(interval);
     // Mostramos el overlay.
     const lossText = `Score: ${score} \nPress START`;
-    overlayText.innerText = lossText;
+    overlayText.textContent = lossText;
     overlay.classList.toggle('hidden');
     running = !running;
 }
@@ -186,7 +186,15 @@ const resetGame = () => {
     // Generamos cadena de inicial.
     chain.push({x: 7, y: 7});
     chain.push({x: 6, y: 7});
-    scoreCounter.textContent = `SCORE: ${score}`;
+    updateScore();
+}
+
+/**
+ * Función que actualiza el contador de puntos.
+ */
+const updateScore = () => {
+    scoreCounter.textContent = `SCORE ${score}`;
+
 }
 
 /**
