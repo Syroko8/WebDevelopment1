@@ -1,12 +1,12 @@
 import './styles/app.css'
-
-import ItemCard  from './components/ItemCard'
+import './components/itemContainer'
+import ItemContainer from './components/itemContainer'
 
 function App() {
 
   return (
     <div className='app'>
-      <ItemCard itemInfo={null} />      
+      <ItemContainer />
     </div>
   )
 }
