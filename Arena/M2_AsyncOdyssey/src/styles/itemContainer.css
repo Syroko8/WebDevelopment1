@@ -1,7 +1,6 @@
 .item-container {
     flex: 1;
     position: relative;
-    background: linear-gradient(135deg, #1A1A1C 0%, #08022d 30%, #0b0628 70%, #460541 90%);
 }
 
 .inner {

@@ -2,16 +2,27 @@ import '../styles/sideBar.css';
 import { useState } from 'react';
 
 const SideBar = () => {
-    const [open, setOpen]  = useState();
+    const [enabledMenu, setEnabledMenu]  = useState(true);
 
+    const handleToggleMenu = () => {
+        setEnabledMenu(!enabledMenu);    
+    }
+
+    const isEnabled = enabledMenu? 'enabled' : '';
 
     return (
         <>
-            <div className='sidebar'>
-                <div className='toggler'>
-                    <button></button>
+            <div className={`sidebar ${isEnabled}`}>
+                <div className={`toggler-container ${isEnabled}`}>
+                    <div className={`title ${isEnabled}`}>Delusion Tracker</div>
+                    <div className='toggler' onClick={handleToggleMenu}>
+                        <div className={`toggler-bar ${isEnabled}`}></div>
+                    </div>  
                 </div>
-                
+                            
+
+
+
             </div>
         </>
     );
