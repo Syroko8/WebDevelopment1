@@ -1,4 +1,4 @@
-import '../styles/itemContainer.css'
+import '../styles/itemContainer.css';
 
 const ItemContainer = () => {
 
