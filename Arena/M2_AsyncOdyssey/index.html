@@ -2,12 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/app.css">
+    <link rel="stylesheet" href="src/styles/itemCard.css">
+    <link rel="stylesheet" href="src/styles/itemContainer.css">
+    <link rel="stylesheet" href="src/styles/sideBar.css">
+    <script type="module" src="./src/components/sidebar.ts" defer></script>
+
     <title>m2-asyncodyssey</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body>  
+    <div class="sidebar enabled">
+        <div class="toggler-container enabled">
+          <div class="title enabled">Delusion Tracker</div>
+          <div class="toggler">
+            <div class="toggler-bar enabled"></div>
+          </div>
+        </div>
+    </div>
+
+    <div class="item-container">
+      <div class="inner"></div>
+    </div>
+
   </body>
 </html>

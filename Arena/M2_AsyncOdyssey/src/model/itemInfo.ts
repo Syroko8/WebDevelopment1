@@ -1,6 +1,6 @@
 export interface ItemInfo {
     id: number;
-    type: 'anime' | 'manga';
+    type: ItemTypes;
     titleEnglish : string;
     titleJapanese: string;
     score: number;
@@ -35,3 +35,5 @@ export interface Trailer {
     url: string;
     youtubeCover: string;
 }
+
+type ItemTypes = 'anime' | 'manga';

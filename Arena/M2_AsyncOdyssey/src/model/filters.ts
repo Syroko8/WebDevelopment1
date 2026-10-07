@@ -1,11 +1,12 @@
 export interface Filters {
-    type: 'anime' | 'manga';
+    type: ItemTypes;
     name: string;
     genresTags: string[];
     year: string;
     season: Seasons;
-    airingStatus: ;
+    airingStatus: AiringStatus;
 }
 
 type Seasons = 'Winter' | 'Spring' | 'Summer' | 'Fall';
-// type AiringStatus = 
+type AiringStatus = 'Airing' | 'Finished' | 'Not Yet Aired' | 'Cancelled';
+type ItemTypes = 'anime' | 'manga';

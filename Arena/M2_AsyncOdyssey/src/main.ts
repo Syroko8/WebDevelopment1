@@ -1,0 +1,1 @@
+// Para almacenar el valor de los filtros.
