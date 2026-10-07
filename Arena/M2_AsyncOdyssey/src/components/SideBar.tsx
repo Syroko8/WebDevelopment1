@@ -19,10 +19,6 @@ const SideBar = () => {
                         <div className={`toggler-bar ${isEnabled}`}></div>
                     </div>  
                 </div>
-                            
-
-
-
             </div>
         </>
     );
