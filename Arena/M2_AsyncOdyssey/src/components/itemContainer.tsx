@@ -1,7 +1,9 @@
+import type { Filters } from '../model/filters';
 import '../styles/itemContainer.css';
 
-const ItemContainer = () => {
+const ItemContainer = ({itemFilters} : {itemFilters: Filters}) => {
 
+    // Petición de items.
 
     return (
         <>

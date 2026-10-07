@@ -15,7 +15,7 @@ export interface Anime extends ItemInfo {
     type: 'anime';
     trailer: Trailer | null;
     episodes: number | null;
-    aired: {};
+    aired: string | null;
     rating: string | null;
     season: string | null;
     year: number | null;
