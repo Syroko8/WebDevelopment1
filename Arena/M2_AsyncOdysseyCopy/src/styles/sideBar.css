@@ -1,5 +1,12 @@
 .sidebar {
     width: 5rem;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     background: rgb(20, 33, 51);
     &.enabled {
         width: 20rem;
@@ -24,7 +31,7 @@
     }
 }
 
-.title {
+.sidebar .title {
     font-size: 1.5rem;
     color: rgb(103, 47, 155);
     opacity: 0;
@@ -40,12 +47,40 @@
     }
 }
 
+.sidebar-body {
+    flex: 1;
+    min-height: 0;
+    width: 20rem;               /* fixed, so content doesn't reflow while the sidebar animates */
+    box-sizing: border-box;
+    padding: 0.5rem 1.25rem 2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #cbd5e1;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+
+    .sidebar.enabled & {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.4s ease 0.2s, visibility 0s;
+    }
+}
+
 .toggler {
     width: 50px;
     height: 50px;
     background-color: transparent;
     cursor: pointer;
     z-index: 6;
+    opacity: 1;
     display: grid;
     justify-content: center;
     align-items: center;

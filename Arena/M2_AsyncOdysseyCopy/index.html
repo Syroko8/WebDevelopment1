@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/app.css" />
+    <link rel="stylesheet" href="/src/styles/sideBar.css" />
+    <link rel="stylesheet" href="/src/styles/modeSwitcher.css" />
+    <link rel="stylesheet" href="/src/styles/filterMenu.css" />
+    <link rel="stylesheet" href="/src/styles/itemContainer.css" />
+    <link rel="stylesheet" href="/src/styles/itemCard.css" />
+    <title>Delusion Tracker</title>
+  </head>
+  <body>
+    <div class="sidebar enabled">
+      <div class="toggler-container enabled">
+        <div class="title enabled">Delusion Tracker</div>
+        <div class="toggler">
+          <div class="toggler-bar enabled"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-body">
+        <div class="mode-stack" role="group" aria-label="Content type">
+          <button type="button" class="mode-card selected" data-mode="anime" aria-pressed="true">Anime</button>
+          <button type="button" class="mode-card" data-mode="manga" aria-pressed="false">Manga</button>
+        </div>
+
+        <form class="filter-form" id="filter-form" autocomplete="off">
+          <label class="field">
+            <span class="field-label">Name</span>
+            <input type="text" name="name" placeholder="Search by title" />
+          </label>
+
+          <div class="field">
+            <span class="field-label">Genres <small id="genre-count"></small></span>
+            <input type="search" id="genre-search" placeholder="Find a genre" aria-label="Find a genre" />
+            <div class="genre-list" id="genre-list"></div>
+            <p class="genre-empty" id="genre-empty" hidden>No genres match.</p>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span class="field-label">Year</span>
+              <input type="number" name="year" min="1940" placeholder="2024" />
+            </label>
+            <label class="field">
+              <span class="field-label">Season</span>
+              <select name="season">
+                <option value="">Any</option>
+                <option>Winter</option>
+                <option>Spring</option>
+                <option>Summer</option>
+                <option>Fall</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field-label">Airing status</span>
+            <select name="airingStatus">
+              <option value="">Any</option>
+              <option>Airing</option>
+              <option>Finished</option>
+              <option>Not Yet Aired</option>
+              <option>Cancelled</option>
+            </select>
+          </label>
+
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="inner"></div>
+    </div>
+
+    <script type="module" src="/src/components/sidebar.ts"></script>
+    <script type="module" src="/src/components/modeSwitcher.ts"></script>
+    <script type="module" src="/src/components/filterMenu.ts"></script>
+  </body>
+</html>

@@ -7,6 +7,6 @@ export interface Filters {
     airingStatus: AiringStatus;
 }
 
-type Seasons = 'Winter' | 'Spring' | 'Summer' | 'Fall';
-type AiringStatus = 'Airing' | 'Finished' | 'Not Yet Aired' | 'Cancelled';
+type Seasons = 'Winter' | 'Spring' | 'Summer' | 'Fall' | 'Any';
+type AiringStatus = 'Airing' | 'Finished' | 'Not Yet Aired' | 'Cancelled' | 'Any';
 type ItemTypes = 'anime' | 'manga';
