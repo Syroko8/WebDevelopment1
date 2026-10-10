@@ -36,4 +36,4 @@ export interface Trailer {
     youtubeCover: string;
 }
 
-type ItemTypes = 'anime' | 'manga';
+export type ItemTypes = 'anime' | 'manga';

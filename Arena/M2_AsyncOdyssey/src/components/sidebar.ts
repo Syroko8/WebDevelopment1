@@ -1,5 +1,3 @@
-import { UIInfo } from '../main';
-
 const sidebar = document.querySelector('.sidebar')!;
 const togglerContainer = document.querySelector('.toggler-container')!;
 const title = sidebar.querySelector('.title')!;

@@ -9,4 +9,13 @@
     box-sizing: border-box;
     padding: 2rem;
     display: flex;
+    justify-content: left;
+    align-items: start;
+    color: aliceblue;
+}
+
+.cards-grid {
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow-y: auto;
 }
