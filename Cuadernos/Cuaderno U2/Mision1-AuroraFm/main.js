@@ -1,19 +1,7 @@
-import { 
-    cancionesIniciales, agregar, duracionTotal, porGenero, 
-    crearInstantanea, guardar, cargar, buscar 
-} from "./playlist.js";
+import { cancionesIniciales, duracionTotal, porGenero, crearInstantanea } from './playlist.js';
 
-console.log("Duración total esperada (21:25):", duracionTotal(cancionesIniciales));
-
-// Comprobación de inmutabilidad con structuredClone
+console.log("Duración total:", duracionTotal(cancionesIniciales));
+console.log("Por género:", porGenero(cancionesIniciales));
 const copia = crearInstantanea(cancionesIniciales);
 copia[0].titulo = "Modificado";
-console.log("Original intacto:", cancionesIniciales[0].titulo !== copia[0].titulo);
-
-// Probar agrupamiento y búsqueda sin tildes
-console.log("Por género:", porGenero(cancionesIniciales));
-console.log("Búsqueda ('debussy'):", buscar(cancionesIniciales, "debussy"));
-
-// Guardar y recuperar
-guardar(cancionesIniciales);
-console.log("Cargado de storage:", cargar());
+console.log("¿El original se mantiene inmutable?", cancionesIniciales[0].titulo === "Midnight City"); // true[cite: 5]
