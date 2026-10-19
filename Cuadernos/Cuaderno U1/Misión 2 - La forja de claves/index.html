@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La Forja de Claves</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="card">
+        <h1>Forja de Claves</h1>
+        <label>Longitud (4-32): <input type="number" id="inputLongitud" value="12" min="4" max="32"></label><br><br>
+        <label><input type="checkbox" id="chkNumeros"> Incluir Números</label><br>
+        <label><input type="checkbox" id="chkSimbolos"> Incluir Símbolos</label><br><br>
+        <button id="btnGenerar">Generar Clave</button>
+        <p id="mensajeAviso" style="color: red;"></p>
+        <h2>Clave generada:</h2>
+        <p id="claveSalida" class="clave-box">-</p>
+    </div>
+</body>
+</html>
