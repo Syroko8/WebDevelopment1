@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+}
+.contenedor {
+    text-align: center;
+}
+.tarjeta {
+    margin-top: 20px;
+    width: 300px;
+    height: 180px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Efecto Holografía */
+.tarjeta.brillo {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    border-color: rgba(255,255,255,0.5);
+    transform: scale(1.05);
+}
+
+/* Temas */
+.tema-0 { background: linear-gradient(45deg, #ff9a9e, #fecfef); color: #333; }
+.tema-1 { background: linear-gradient(45deg, #a18cd1, #fbc2eb); color: #333; }
+.tema-2 { background: linear-gradient(45deg, #84fab0, #8fd3f4); color: #333; }
+
+.oculto {
+    display: none;
+}
+
+button { margin-top: auto; padding: 5px 10px; cursor: pointer; }
