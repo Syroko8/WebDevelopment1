@@ -4,123 +4,43 @@ body {
     display: grid;
     place-items: center;
     padding: 24px;
-    color: #243238;
+    font-family: sans-serif;
     background: linear-gradient(135deg, #c7fcf4, #f7e8d2);
-
-}   
-
-h1 {
-    width: 100%;
-    display: grid;
-    place-items: center;
-}
-
-.mainContent {
-    display: grid;
-    place-items: center;
-    width: 460px;
-    background-color:  #8bcec5;
-    padding: 24px;
-}
-
-
-
-/**
-* {
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    color: #243238;
-    background: linear-gradient(135deg, #dff3f0, #f7e8d2);
-    font-family: Georgia, "Times New Roman", serif;
 }
 
 .game-card {
-    width: min(100%, 460px);
+    width: 460px;
     padding: 40px;
-    border: 1px solid rgba(36, 50, 56, 0.12);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.86);
-    box-shadow: 0 18px 45px rgba(36, 50, 56, 0.14);
-}
-
-h1 {
-    margin: 0 0 10px;
-    color: #136f63;
-    font-size: clamp(2.4rem, 8vw, 4rem);
-    line-height: 1;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.instructions {
-    margin: 0 0 28px;
-    text-align: center;
-    line-height: 1.5;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
 }
 
 .guess-row {
     display: flex;
     gap: 10px;
+    margin-bottom: 15px;
 }
 
-input,
-button {
-    min-height: 48px;
-    border-radius: 10px;
-    font: inherit;
-}
-
-input {
-    min-width: 0;
-    flex: 1;
-    padding: 0 14px;
-    border: 2px solid #b7cbc7;
-    color: #243238;
-    font-family: Arial, sans-serif;
-    font-size: 1.1rem;
-}
-
-input:focus {
-    outline: 3px solid rgba(19, 111, 99, 0.2);
-    border-color: #136f63;
+input, button {
+    padding: 10px;
+    font-size: 1rem;
 }
 
 button {
-    padding: 0 22px;
-    border: 0;
-    color: #fff;
     background: #136f63;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-weight: 700;
 }
 
-button:hover {
-    background: #0d584f;
+button:disabled {
+    background: #ccc;
 }
 
 .result {
-    min-height: 28px;
-    margin: 24px 0 0;
-    color: #136f63;
-    font-size: 1.15rem;
-    font-weight: 700;
-    text-align: center;
+    font-weight: bold;
+    min-height: 24px;
 }
-**/
