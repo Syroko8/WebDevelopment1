@@ -5,7 +5,7 @@ import {
 } from './playlist.js';
 
 let miPlaylist = cargar();
-crearInstantanea(miPlaylist); // Estado inicial en historial[cite: 5]
+crearInstantanea(miPlaylist); // Estado inicial en historial
 
 const playlistEl = document.getElementById('playlist');
 const durationEl = document.getElementById('screen-duration');
@@ -97,10 +97,10 @@ document.getElementById('btn-cargar').addEventListener('click', () => {
   render();
 });
 
-// Verificación de inmutabilidad en consola[cite: 5]
+// Verificación de inmutabilidad en consola
 console.log("--- DEMO DE INMUTABILIDAD ---");
 console.log("Original antes:", cancionesIniciales);
-duracionTotal(cancionesIniciales); // Devuelve "21:25"[cite: 5]
+duracionTotal(cancionesIniciales);
 console.log("Original después:", cancionesIniciales);
 console.log("Agrupación por género:", porGenero(cancionesIniciales));
 

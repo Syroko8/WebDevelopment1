@@ -7,10 +7,10 @@ export const cancionesIniciales = [
   { id: 5, titulo: "Symphony No. 5", artista: "Beethoven", genero: "clásica", duracion: 176, favorita: false }
 ];
 
-// Historial para el reto extra de deshacer[cite: 5]
+// Historial para el reto extra de deshacer
 let historial = [];
 
-// 1. Operaciones básicas (devuelven un nuevo array sin mutar)[cite: 1, 5]
+// 1. Operaciones básicas (devuelven un nuevo array sin mutar)
 export function agregar(lista, nuevaCancion) {
   return [...lista, { ...nuevaCancion, id: Date.now() }];
 }
@@ -25,7 +25,7 @@ export function alternarFavorita(lista, id) {
   );
 }
 
-// 2. Consultas[cite: 1, 5]
+// 2. Consultas
 export function duracionTotal(lista) {
   const totalSegundos = lista.reduce((acc, c) => acc + c.duracion, 0);
   const minutos = Math.floor(totalSegundos / 60);
@@ -46,21 +46,21 @@ export function porGenero(lista) {
   return Object.groupBy(lista, cancion => cancion.genero);
 }
 
-// 3. Instantáneas con structuredClone[cite: 1, 5]
+// 3. Instantáneas con structuredClone
 export function crearInstantanea(lista) {
   const copia = structuredClone(lista);
   historial.push(structuredClone(lista));
   return copia;
 }
 
-// Reto Extra: Deshacer[cite: 5]
+// Reto Extra: Deshacer
 export function deshacer() {
   if (historial.length <= 1) return null;
   historial.pop(); // Elimina estado actual
   return structuredClone(historial[historial.length - 1]);
 }
 
-// Reto Extra: Buscar sin tildes ni mayúsculas[cite: 5]
+// Reto Extra: Buscar sin tildes ni mayúsculas
 export function buscar(lista, texto) {
   const normalizar = (str) => 
     str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -71,7 +71,7 @@ export function buscar(lista, texto) {
   );
 }
 
-// 4. Persistencia en localStorage[cite: 1, 5]
+// 4. Persistencia en localStorage
 export function guardar(lista) {
   localStorage.setItem("aurora-fm", JSON.stringify(lista));
 }

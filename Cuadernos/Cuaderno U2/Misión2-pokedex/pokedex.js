@@ -7,7 +7,7 @@ export class ErrorPokedex extends Error {
   }
 }
 
-// Reto Extra: Caché con Map[cite: 3]
+// Reto Extra: Caché con Map
 const cachePokemon = new Map();
 
 // Consulta básica con caché
@@ -36,7 +36,7 @@ export async function obtenerPokemon(nombre) {
   }
 }
 
-// Timeout genérico con Promise.race y AbortController (Reto extra)[cite: 3, 4]
+// Timeout genérico con Promise.race y AbortController (Reto extra)
 export function conTimeout(promesa, ms = 4000) {
   const timeout = new Promise((_, reject) =>
     setTimeout(() => reject(new ErrorPokedex("Tiempo de espera agotado", 408)), ms)
@@ -44,7 +44,7 @@ export function conTimeout(promesa, ms = 4000) {
   return Promise.race([promesa, timeout]);
 }
 
-// Carga en paralelo con Promise.all y medición de tiempo[cite: 3, 4]
+// Carga en paralelo con Promise.all y medición de tiempo
 export async function obtenerEquipo(nombres) {
   console.time("Carga en Paralelo (Promise.all)");
   const resultados = await Promise.all(nombres.map(n => conTimeout(obtenerPokemon(n))));
@@ -52,7 +52,7 @@ export async function obtenerEquipo(nombres) {
   return resultados;
 }
 
-// Carga tolerante a fallos con Promise.allSettled[cite: 3, 4]
+// Carga tolerante a fallos con Promise.allSettled
 export async function obtenerEquipoSeguro(nombres) {
   const resultados = await Promise.allSettled(nombres.map(n => conTimeout(obtenerPokemon(n))));
   
