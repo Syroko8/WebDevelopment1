@@ -110,7 +110,7 @@ document.getElementById('btn-cargar')?.addEventListener('click', () => {
   }
 });
 
-// Prueba del genérico 'ultima' sin any[cite: 2]
+// Prueba del genérico 'ultima' sin any
 console.log("Última canción:", ultima<Cancion>(miPlaylist));
 console.log("Último género (string):", ultima<string>(["synthpop", "rock", "clásica"]));
 
