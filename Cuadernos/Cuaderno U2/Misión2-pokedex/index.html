@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokédex de Campo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <h1>🎒 Pokédex de Campo</h1>
+    <div class="search-box">
+      <input type="text" id="poke-input" placeholder="Ej: pikachu, eevee, misingno...">
+      <button id="btn-buscar">Buscar Individual</button>
+      <button id="btn-equipo-seguro">Cargar Equipo (Seguro)</button>
+    </div>
+
+    <div id="status-msg"></div>
+
+    <div id="cards-grid" class="cards-grid"></div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

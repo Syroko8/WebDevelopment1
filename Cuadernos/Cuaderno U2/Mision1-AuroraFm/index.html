@@ -2,12 +2,46 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Aurora FM - Misión 1</title>
+  <title>Aurora FM - Gestor de Playlists</title>
   <link rel="stylesheet" href="styles.css">
-  <script type="module" src="main.js"></script>
 </head>
 <body>
-  <h1>🎧 Aurora FM</h1>
-  <p>Revisa la consola del navegador para ver la inmutabilidad en acción.</p>
+  <div class="fm-container">
+    <header class="display-header">
+      <h1>📻 Aurora FM 98.5</h1>
+      <div class="display-screen">
+        <span id="screen-status">LISTA REPRODUCCIÓN</span>
+        <span id="screen-duration">Duración Total: 00:00</span>
+      </div>
+    </header>
+
+    <div class="controls">
+      <input type="text" id="input-buscar" placeholder="🔍 Buscar por título o artista...">
+      <div class="btn-group">
+        <button id="btn-ordenar-titulo">Ordenar Título</button>
+        <button id="btn-ordenar-duracion">Ordenar Duración</button>
+
+        <button id="btn-instantanea">📸 Crear Instantánea</button>
+        <button id="btn-deshacer">↩️ Deshacer</button>
+        <button id="btn-guardar">💾 Guardar</button>
+        <button id="btn-cargar">📂 Cargar</button>
+      </div>
+    </div>
+
+    <form id="form-agregar" class="form-agregar">
+      <input type="text" id="titulo" placeholder="Título" required>
+      <input type="text" id="artista" placeholder="Artista" required>
+      <select id="genero">
+        <option value="synthpop">synthpop</option>
+        <option value="rock">rock</option>
+        <option value="clásica">clásica</option>
+      </select>
+      <input type="number" id="duracion" placeholder="Segundos" required>
+      <button type="submit">+ Añadir</button>
+    </form>
+
+    <ul id="playlist" class="song-list"></ul>
+  </div>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
