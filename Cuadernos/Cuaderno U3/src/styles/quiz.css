@@ -1,0 +1,22 @@
+.opcion {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: white;
+  color: #222;
+  border: 2px solid #ccc;
+}
+
+.opcion.correcta {
+  background: #d3f9d8;
+  border-color: #2f9e44;
+}
+
+.opcion.incorrecta {
+  background: #ffe3e3;
+  border-color: #e03131;
+}
+
+.siguiente {
+  margin-top: 1rem;
+}

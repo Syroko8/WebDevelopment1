@@ -1,0 +1,103 @@
+.habit-card {
+    background-color: #ffffff;
+    border: 2px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    width: 25rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.habit-card .title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0.75rem;
+    flex: 1;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+/* Visual feedback when the whole habit is marked as completed */
+.habit-card.completed {
+    background-color: #fcfcfc;
+}
+
+.habit-card.completed .title {
+    text-decoration: line-through;
+    color: #888888;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Button base styling */
+button.check,
+.check {
+    margin: 0;
+    font-family: inherit;
+    background-color: #fefce8;
+    border: 2px solid #1a1a1a;
+    color: #1a1a1a;
+    border-radius: 8px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.15s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+button.check:hover,
+.check:hover {
+    background-color: #fef08a;
+    transform: translateY(-1px);
+}
+
+/* Active / Completed state for any check button (Today or Completed) */
+button.check.active,
+.check.active {
+    background-color: #22c55e;
+    color: #ffffff;
+    border-color: #1a1a1a;
+}
+
+button.check.active:hover,
+.check.active:hover {
+    background-color: #16a34a;
+}
+
+/* Optional empty square style fallback */
+.check:empty {
+    width: 2rem;
+    padding: 0;
+}
+
+.check.active:empty::after {
+    content: "✓";
+    font-size: 1rem;
+    font-weight: bold;
+}
