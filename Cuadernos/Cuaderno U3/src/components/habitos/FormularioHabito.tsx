@@ -7,7 +7,7 @@ const FormularioHabito = ({ habitList, addHabit }: { habitList: string[], addHab
     return (
         <>
             <div className="menuBar">
-                <input type="text" onChange={(e) => setInput(e.target.value)} />
+                <input type="text" onChange={(e) => setInput(e.target.value.trim())} />
                 <button onClick={() => {
                     if (input != '') {
                         addHabit([...habitList, input])

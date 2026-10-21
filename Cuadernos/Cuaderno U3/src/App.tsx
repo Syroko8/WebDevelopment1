@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Tripulacion from "./components/Tripulacion";
-import EsclusaDemo from "./components/EsclusaDemo";
-import RankingDemo from "./components/RankingDemo";
-import Aplausometro from "./components/Aplausometro";
-import Quiz from "./components/Quiz";
+import Tripulacion from "./components/tripulacion/Tripulacion";
+import EsclusaDemo from "./components/esclusa/EsclusaDemo";
+import RankingDemo from "./components/ranking/RankingDemo";
+import Aplausometro from "./components/aplausometro/Aplausometro";
+import Quiz from "./components/trivial/Quiz";
 import "./styles/app.css";
 import ForjaDeHabitos from "./components/habitos/ForjaDeHabitos";
 

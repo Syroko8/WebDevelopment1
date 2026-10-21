@@ -1,5 +1,5 @@
 import Ranking from "./Ranking";
-import { RANKING } from "../data/ranking";
+import { RANKING } from "../../data/ranking";
 
 function RankingDemo() {
   return (

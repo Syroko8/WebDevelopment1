@@ -6,16 +6,32 @@ Repositorio único para los ejercicios y entregas de **Web Development I**. Cont
 
 ```
 .
-├── Cuadernos/                          
-│   └── Cuaderno U1/
-│       └── Misión1-El oráculo de los números/
-│           
+├── Cuadernos/
+│   ├── Cuaderno U1/
+│   │   ├── Misión1-El oráculo de los números/
+│   │   ├── Misión2-La forja de claves/
+│   │   └── Misión3-La tarjeta holográfica/
+│   │
+│   ├── Cuaderno U2/
+│   │   ├── Mision1-AuroraFm/
+│   │   ├── Misión2-pokedex/
+│   │   └── Misión3-Aurora_ts/
+│   │
+│   └── Cuaderno U3/
+│       └── src/
+│           └── components/
+│               ├── tripulacion/                # 1.1 Tripulación
+│               ├── esclusa/                    # 1.2 Esclusa
+│               ├── ranking/                    # 1.3 Ranking
+│               ├── aplausometro/               # 1.4 Aplausómetro
+│               ├── trivial/                    # Misión 1 (Quiz)
+│               └── habitos/                    # Misión 2 (Forja de hábitos)
 │
-├── Arena/                               
-│   └── M1_ElDespertarDelDOM/
-│       
+├── Arena/
+│   ├── M1_ElDespertarDelDOM/
+│   └── M2_AsyncOdyssey/
 │
-└── README.md                            
+└── README.md
 ```
 
 ### `Cuadernos/`

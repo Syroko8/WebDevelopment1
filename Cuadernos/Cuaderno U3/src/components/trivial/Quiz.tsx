@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { PREGUNTAS } from "../data/preguntas";
+import { PREGUNTAS } from "../../data/preguntas";
 import Resultado from "./Resultado";
-import "../styles/quiz.css";
+import "../../styles/quiz.css";
 
 function Quiz() {
   const [indice, setIndice] = useState(0);

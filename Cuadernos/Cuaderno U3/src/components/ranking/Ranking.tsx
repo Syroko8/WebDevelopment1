@@ -1,4 +1,4 @@
-import type { Jugador } from "../data/ranking";
+import type { Jugador } from "../../data/ranking";
 
 type Props = {
   jugadores: Jugador[];
