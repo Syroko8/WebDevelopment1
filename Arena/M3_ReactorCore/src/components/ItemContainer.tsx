@@ -1,4 +1,8 @@
+import '../styles/itemContainer.css'
+
 const ItemContainer = () => {
+
+    
 
     return (
         <>
