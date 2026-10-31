@@ -1,15 +1,18 @@
 import { useState } from "react";
 
-const FormSelect = ({items, onSelected} : {items:string[], onSelected:CallableFunction}) => {
+const FormSelect = (
+    {items, label, onSelected} : 
+    {items:string[], label:string, onSelected:(val:string) => null}
+) => {
  
     const [selected, setSelected] = useState('');
 
     return (
         <>
             <div className="field">
-                <label className="field-label" htmlFor="airingStatus">Airing status</label>
+                <label className="field-label" htmlFor="select">{label}</label>
                 <select 
-                    name="airingStatus" id="airingStatus"
+                    id="select"
                     onChange={e => {setSelected(e.target.value); onSelected(e.target.value)}}
                     value={selected === ''? 'Any' : selected}
                 >
