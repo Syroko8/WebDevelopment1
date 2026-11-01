@@ -3,8 +3,7 @@ import { genres } from "../model/genres";
 import GenreOption from "./GenreOption";
 import { UIInfo } from "../main";
 
-
-const GenreSelect = () => {
+const FormGenreField = () => {
 
     const [selected, setSelected] = useState(new Set<string>());
     const [pickerVisibility, setPickerVisibility] = useState(false);
@@ -21,14 +20,17 @@ const GenreSelect = () => {
     return (
         <>
             <div className="field genre-field">
-                <label className="field-label" htmlFor="genre-search">Genres
-                 {selected.size == 0 ? '' : `${selected.size} selected`}
+                <label className="field-label" htmlFor="genre-search">{`Genres
+                 ${selected.size == 0 ? '' : `${selected.size} selected`}`}
                 </label>
                 <input type="search" id="genre-search" placeholder="Find a genre"
                     value={inputValue}
                     onChange={e => setInputValue(e.target.value)}
                     onFocus={() => setPickerVisibility(true)}
                     onBlur={() => setPickerVisibility(false)}
+                    onKeyDown={e => {
+                        if (e.key === 'Enter') {e.preventDefault()}
+                    }}
                 />
                 {pickerVisibility && <div className="genre-list" id="genre-list">
                     {genres.map(genre => {
@@ -58,4 +60,4 @@ const GenreSelect = () => {
     );
 }
 
-export default GenreSelect;
+export default FormGenreField;

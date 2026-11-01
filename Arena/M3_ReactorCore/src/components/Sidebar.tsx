@@ -1,52 +1,102 @@
 import '../styles/sideBar.css'
 import '../styles/filterMenu.css'
+import { useState } from 'react';
+import Toggler from './Toggler';
+import type { ItemTypes } from '../model/itemInfo';
+import TypeButton from './TypeButton';
+import FormTextInput from './FormTextInput';
+import { UIInfo } from '../main';
+import FormGenreField from './FormGenreField';
+import FormYearInput from './FormYearInput';
+import FormSelect from './FormSelect';
+import { airingStatus, seasons } from '../model/filters';
 
-const Sidebar = () => {
+const Sidebar = ({onSearchClick} : {onSearchClick: ()=>void}) => {
+
+    const [enableSidebar, setEnableSidebar] = useState(true); 
+    const [enabledType, setEnabledType] = useState<ItemTypes>('anime');
+
+    function handleTogglerClick() {        
+        setEnableSidebar(!enableSidebar);
+    }
+
+    function handleTypeTogglerClick(type: ItemTypes) {  
+        UIInfo.type = type;      
+        type === 'anime' ? setEnabledType('anime') : setEnabledType('manga');
+    }
+
+    function handleTitleInput(title: string) {
+        UIInfo.name = title;
+    }
+
+    function handleYearInput(year: string) {
+        UIInfo.year = year;
+    }
+
+    function handleSeasonsSelect(season: string) {
+        UIInfo.season = season;
+    }
+
+    function handleAiringStatusSelect(airingStatus: string) {
+        UIInfo.airingStatus = airingStatus;
+    }
 
     return (
         <>
-            <div className="sidebar enabled">
-                <div className="toggler-container enabled">
-                    <h1 className="title enabled">Delusion Tracker</h1>
-                    <div className="toggler">
-                    <div className="toggler-bar enabled"></div>
-                    </div>
-                </div>
-
-                <div className="filters enabled">
+            <div className={`sidebar ${enableSidebar ? 'enabled' : ''}`}>
+                
+                <Toggler 
+                    enabled={enableSidebar} 
+                    customOnClick={handleTogglerClick} 
+                />
+                <div className={`filters ${enableSidebar ? 'enabled':''}`}>
                     <div className="type-selector">
-                        <button className="manga-selector">Manga</button>
-                        <button className="anime-selector" disabled>Anime</button>
+                        <TypeButton 
+                            text='Anime'
+                            type='anime'
+                            selected={enabledType === 'anime'}
+                            customOnClick={handleTypeTogglerClick}
+                        />
+                        <TypeButton 
+                            text='Manga'
+                            type='manga'
+                            selected={enabledType === 'manga'}
+                            customOnClick={handleTypeTogglerClick}
+                        />
                     </div>
                     <form className="filter-form" id="filter-form">
                         
-                        <div className="field">
-                        <label className="field-label" htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Search by title" />
-                        </div>
+                        <FormTextInput
+                            label='Name'
+                            placeholder='Search by title'
+                            onInput={handleTitleInput}
+                        />
                         
-                        <div className="field genre-field">
-                        <label className="field-label" htmlFor="genre-search">Genres <small id="genre-count"></small></label>
-                        <input type="search" id="genre-search" placeholder="Find a genre"/>
-                        <div className="genre-list" hidden id="genre-list"></div>
-                        </div>
+                        <FormGenreField/>
 
-                        <div className="field">
-                        <label className="field-label" htmlFor="year">Year</label>
-                        <input type="number" id="year" name="year" min="1940" placeholder="2026" />
-                        </div>
+                        <FormYearInput 
+                            label='Year' 
+                            customOnInput={handleYearInput}
+                        />
 
-                        <div className="field">
-                        <label htmlFor="seasons" className="field-label">Seasons</label>
-                        <select name="seasons" id="seasons"></select>
-                        </div>
+                        <FormSelect 
+                            label='seasons'
+                            text='Seasons'
+                            items={seasons}
+                            onSelected={handleSeasonsSelect}
+                        />
 
-                        <div className="field">
-                        <label className="field-label" htmlFor="airingStatus">Airing status</label>
-                        <select name="airingStatus" id="airingStatus"></select>
-                        </div>
+                        <FormSelect 
+                            label='airingStatus'
+                            text='Airing status'
+                            items={airingStatus}
+                            onSelected={handleAiringStatusSelect}
+                        />
 
-                        <button type="button" className="search-button">Search</button>
+                        <button 
+                            type="button" className="search-button"
+                            onClick={onSearchClick}
+                        >Search</button>
                     </form>
                 </div>
             </div>

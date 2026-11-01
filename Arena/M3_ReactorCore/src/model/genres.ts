@@ -82,6 +82,6 @@ export const genres: Genre[] = [
 
 export type Genre = {
   name: string, 
-  animeId: number,
+  animeId: number | null,
   mangaId: number
 }

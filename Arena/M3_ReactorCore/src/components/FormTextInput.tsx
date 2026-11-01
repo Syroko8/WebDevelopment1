@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TextInput = (
+const FormTextInput = (
     {label, placeholder, onInput} : 
     {label:string, placeholder:string, onInput:(val:string) => void}
 ) => {
@@ -25,4 +25,4 @@ const TextInput = (
     );
 }
 
-export default TextInput;
+export default FormTextInput;

@@ -1,6 +1,6 @@
 .sidebar {
     width: 5rem;
-    height: 100%;
+    min-height: 100vh;
     background: rgb(20, 33, 51);
     &.enabled {
         width: 20rem;

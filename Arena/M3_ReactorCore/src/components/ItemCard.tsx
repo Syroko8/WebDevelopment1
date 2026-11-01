@@ -1,7 +1,7 @@
 import type { ItemInfo } from '../model/itemInfo';
 import '../styles/itemCard.css'
 
-const ItemCard = (item: ItemInfo) => {
+const ItemCard = ({item} : {item: ItemInfo}) => {
     return (
         <>
             <div className='item-card'>

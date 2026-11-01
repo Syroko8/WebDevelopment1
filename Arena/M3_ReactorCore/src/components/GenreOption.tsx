@@ -10,6 +10,7 @@ const GenreOption = ({genre, hidden, isSelected, customOnClick} : GenreoptionsPr
     return (
         <>
             <button 
+                type="button"
                 className={`genre-option ${isSelected ? 'selected' : ''}`} 
                 hidden={hidden}
                 onMouseDown={e => {
