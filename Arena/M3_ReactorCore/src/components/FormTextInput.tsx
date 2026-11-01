@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const TextInput = (
     {label, placeholder, onInput} : 
-    {label:string, placeholder:string, onInput:(val:string) => null}
+    {label:string, placeholder:string, onInput:(val:string) => void}
 ) => {
  
     const [text, setText] = useState('')

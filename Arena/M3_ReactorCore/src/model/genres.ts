@@ -1,4 +1,4 @@
-export const genres = [
+export const genres: Genre[] = [
   { name: "Action", animeId: 1, mangaId: 1 },
   { name: "Adventure", animeId: 2, mangaId: 2 },
   { name: "Avant Garde", animeId: 5, mangaId: 5 },
@@ -79,3 +79,9 @@ export const genres = [
   { name: "Shoujo", animeId: 25, mangaId: 25 },
   { name: "Shounen", animeId: 27, mangaId: 27 },
 ];
+
+export type Genre = {
+  name: string, 
+  animeId: number,
+  mangaId: number
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const FormSelect = (
     {items, label, onSelected} : 
-    {items:string[], label:string, onSelected:(val:string) => null}
+    {items:string[], label:string, onSelected:(val:string) => void}
 ) => {
  
     const [selected, setSelected] = useState('');
