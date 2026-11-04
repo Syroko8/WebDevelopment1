@@ -1,0 +1,269 @@
+/* ==========================================================================
+   Misión 1 - Hackathon Inscription Light Theme
+   ========================================================================== */
+
+.wholeParent {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  background-color: var(--color-bg-surface, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.08));
+  padding: 2.25rem;
+  animation: cardFadeIn 0.3s ease-out;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header inside Misión 1 */
+.mision-header {
+  margin-bottom: 1.75rem;
+  text-align: left;
+}
+
+.mision-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary, #2563eb);
+  background-color: var(--color-primary-subtle, #eff6ff);
+  border: 1px solid var(--color-primary-border, #bfdbfe);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm, 6px);
+  margin-bottom: 0.5rem;
+}
+
+.mision-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-main, #0f172a);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.mision-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #64748b);
+  line-height: 1.4;
+}
+
+/* Form Layout */
+.wholeParent form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.wholeParent label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main, #334155);
+}
+
+.label-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main, #334155);
+}
+
+/* Inputs & Select */
+.wholeParent input[type="text"],
+.wholeParent input[type="email"],
+.wholeParent input[type="url"],
+.wholeParent input:not([type="checkbox"]):not([type="submit"]):not([type="radio"]):not([type="button"]),
+.wholeParent select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.925rem;
+  color: var(--color-text-main, #0f172a);
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-border, #cbd5e1);
+  border-radius: var(--radius-md, 10px);
+  padding: 0.65rem 0.9rem;
+  box-sizing: border-box;
+  transition: var(--transition-fast, 0.15s ease);
+  outline: none;
+}
+
+.wholeParent input::placeholder {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: 0.875rem;
+}
+
+.wholeParent input:hover,
+.wholeParent select:hover {
+  border-color: #94a3b8;
+}
+
+.wholeParent input:focus,
+.wholeParent select:focus {
+  border-color: var(--color-primary, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Fieldset for languages */
+.wholeParent fieldset {
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-md, 10px);
+  padding: 0.85rem 1rem 1rem;
+  background-color: var(--color-bg-subtle, #f8fafc);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.wholeParent fieldset legend {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--color-text-secondary, #475569);
+  padding: 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Checkbox Labels */
+.wholeParent .checkbox-label,
+.wholeParent fieldset label,
+.wholeParent label:has(input[type="checkbox"]) {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-main, #334155);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Checkboxes */
+.wholeParent input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-primary, #2563eb);
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Error Messages */
+.wholeParent .error {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-danger, #dc2626);
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  animation: cardFadeIn 0.2s ease-in;
+}
+
+.wholeParent .error::before {
+  content: "⚠";
+  font-size: 0.85rem;
+}
+
+/* Submit Button */
+.wholeParent button[type="submit"],
+.submit-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-primary, #2563eb);
+  border: none;
+  border-radius: var(--radius-md, 10px);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  transition: var(--transition-normal, 0.2s ease);
+}
+
+.wholeParent button[type="submit"]:hover:not(:disabled),
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-hover, #1d4ed8);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+.wholeParent button[type="submit"]:active:not(:disabled),
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.wholeParent button[type="submit"]:disabled,
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: #64748b;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Spinner */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .wholeParent {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md, 12px);
+  }
+
+  .mision-title {
+    font-size: 1.2rem;
+  }
+
+  .checkbox-group {
+    gap: 1rem;
+  }
+}
