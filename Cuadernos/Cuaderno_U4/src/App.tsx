@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import HackathonInscription from './mision1/components/HackathonInscription';
+import HackathonInscription from './mission1/components/HackathonInscription';
 
 function App() {
   const tasks = ['Misión 1'];
@@ -15,14 +15,14 @@ function App() {
           <span className='brand-title'>Cuaderno de Tareas</span>
         </div>
         <nav className='nav-links'>
-          {tasks.map((misionName) => {
+          {tasks.map((missionName) => {
             return (
               <button
-                key={misionName}
-                className={`nav-btn ${task === misionName ? 'active' : ''}`}
-                onClick={() => setTask(misionName)}
+                key={missionName}
+                className={`nav-btn ${task === missionName ? 'active' : ''}`}
+                onClick={() => setTask(missionName)}
               >
-                {misionName}
+                {missionName}
               </button>
             );
           })}
