@@ -1,7 +1,7 @@
 import { string, z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import '../mision1.css';
+import './mission1.css';
 
 const HackathonInscription = () => {
 

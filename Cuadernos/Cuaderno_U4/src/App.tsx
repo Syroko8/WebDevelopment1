@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import HackathonInscription from './mission1/components/HackathonInscription';
+import HackathonInscription from './mission1/HackathonInscription';
 
 function App() {
   const tasks = ['Misión 1'];
