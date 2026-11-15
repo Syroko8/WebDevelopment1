@@ -1,29 +1,31 @@
 import { z } from "zod";
 
-const contentTypes = ["pelicula", "serie", "libro", "comic", "manga"];
-const states = ["pendiente", "en progreso", "completado"];
+export const contentTypes = ["Pelicula", "Serie", "Libro", "Comic", "Manga"];
+export const contentStates = ["Pendiente", "En progreso", "Completado"];
 
-export const itemSchema = z.object({
+export const ItemSchema = z.object({
     title: z.string().trim().min(2, "El título debe de tener al menos dos caracteres."),
     author_studio: z.string().trim().optional(),
     type: z.enum(contentTypes, {
         error: "Selecciona el tipo de contenido",
     }),
-    state: z.enum(states, {
+    state: z.enum(contentStates, {
         error: "Selecciona un estado",
     }),
-    score: z.preprocess(
+    rating: z.preprocess(
         (score) => (score === "" || score === null || score === undefined ? undefined : Number(score)),
         z.
-        number({error: "La puntuación debe ser un número entero"})
+        number({error: "La puntuación debe ser un número"})
+        .int({error: "La puntuación debe ser un entero"})
         .min(0, {error: "La puntuación mínima es 0"})
         .max(10, {error: "La puntuación máxima es 10"})
+        .optional()
     ),
     notes: z.string().max(250, {error: "El texto supera los 250 caracteres"}).optional()
 }).refine(
-    data => (data.state != "completado" && data.score !== undefined),
+    data => !(data.state !== "Completado" && data.rating !== undefined),
     {
         error: "No puedes puntuar algo que aún tienes pendiente",
-        path: ["score"],
+        path: ["rating"],
     }
 );
