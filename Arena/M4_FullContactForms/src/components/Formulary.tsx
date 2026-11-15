@@ -12,7 +12,6 @@ const Formulary = () => {
             type: "",
             state: "",
             rating: undefined,
-            notes: ""
         },
     });
 
@@ -83,34 +82,27 @@ const Formulary = () => {
                     />
                     {errors.rating && <p className="error">{errors.rating.message}</p>}
                 </div>
-
-                {/** Notes field */}
-                <div className="field">
-                    <label htmlFor="notes">Anotación</label>
-                    <textarea 
-                        id="notes" 
-                        aria-describedby="notes-error"
-                        {...register("notes")}
-                    />
-                    {errors.notes && <p className="error">{errors.notes.message}</p>}
-                </div>
                 
-                <button 
-                    type="submit"
-                    className="submit-btn"
-                    disabled={isSubmitting}
-                    aria-disabled={isSubmitting}
-                >
-                    {isSubmitting ? 
-                        (
-                            <>
-                                <span className="spinner"></span>
-                                <span>Guardando...</span>
-                            </>
-                        ) :
-                        "Guardar"
-                }
-                </button>
+                <div className="buttons">
+                    <button onClick={() => reset()}>Limpiar</button>
+
+                    <button 
+                        type="submit"
+                        className="submit-btn"
+                        disabled={isSubmitting}
+                        aria-disabled={isSubmitting}
+                    >
+                        {isSubmitting ? 
+                            (
+                                <>
+                                    <span className="spinner"></span>
+                                    <span>Guardando...</span>
+                                </>
+                            ) :
+                            "Guardar"
+                    }
+                    </button>
+                </div>
             </form>
         </>
     );

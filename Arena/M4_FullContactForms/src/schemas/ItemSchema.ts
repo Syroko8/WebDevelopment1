@@ -1,7 +1,9 @@
 import { z } from "zod";
 
 export const contentTypes = ["Pelicula", "Serie", "Libro", "Comic", "Manga"];
+export type contentType = typeof contentTypes[number];
 export const contentStates = ["Pendiente", "En progreso", "Completado"];
+export type contentState = typeof contentTypes[number];
 
 export const ItemSchema = z.object({
     title: z.string().trim().min(2, "El título debe de tener al menos dos caracteres."),
@@ -21,7 +23,6 @@ export const ItemSchema = z.object({
         .max(10, {error: "La puntuación máxima es 10"})
         .optional()
     ),
-    notes: z.string().max(250, {error: "El texto supera los 250 caracteres"}).optional()
 }).refine(
     data => !(data.state !== "Completado" && data.rating !== undefined),
     {
