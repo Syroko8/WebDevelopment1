@@ -2,15 +2,23 @@ import { useQuery } from "@tanstack/react-query";
 import { getItems } from "../services/itemService";
 import { contentTypes } from "../schemas/ItemSchema";
 import { useState } from "react";
+import ItemCard from "./ItemCard";
 
 const ItemList = () => {
-
     const [type, setType] = useState(contentTypes[0]);
 
     const { data, isPending, isError, error } = useQuery({
         queryKey: ["items"],
         queryFn: getItems,
     });
+
+    function handleOnModify(id: number) {
+
+    }   
+    
+    function handleOnDelete(id: number) {
+
+    }
 
     return (
         <div className="item-list">
@@ -29,9 +37,16 @@ const ItemList = () => {
                 {isPending && <span className="spinner"></span>}
                 {isError && <div className="query-error">Se ha producido un error: {error.message}</div>}
                 {!isError && !isPending && (
-                    "" // Mostramos lista.
-                )
-                }
+                    data?.filter((item) => !type || item.type === type)
+                    .map((item) => (
+                        <ItemCard 
+                            key={item.id} 
+                            {...item} 
+                            onModify={handleOnModify}
+                            onDelete={handleOnDelete}
+                        />
+                    ))
+                )}
             </div>
         </div>
     );
