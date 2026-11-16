@@ -30,3 +30,12 @@ export const ItemSchema = z.object({
         path: ["rating"],
     }
 );
+
+export const ItemResponseSchema = ItemSchema.extend({
+    id: z.coerce.string(),
+});
+
+export const ItemListSchema = z.array(ItemResponseSchema);
+
+export type CreateItemInput = z.infer<typeof ItemSchema>;
+export type Item = z.infer<typeof ItemResponseSchema>;

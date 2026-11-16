@@ -12,11 +12,11 @@ const ItemList = () => {
         queryFn: getItems,
     });
 
-    function handleOnModify(id: number) {
+    function handleOnModify(id: string) {
 
     }   
     
-    function handleOnDelete(id: number) {
+    function handleOnDelete(id: string) {
 
     }
 

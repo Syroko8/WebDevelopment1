@@ -1,14 +1,14 @@
 import type { contentState, contentType } from "../schemas/ItemSchema";
 
 export interface itemProp {
-    id: number,
+    id: string,
     title: string,
     type: contentType,
     state: contentState,
     author_studio: string,
     rating: number,
-    onModify: (id: number) => void,
-    onDelete: (id: number) => void
+    onModify: (id: string) => void,
+    onDelete: (id: string) => void
 }
 
 const ItemCard = (itemInfo: itemProp) => {

@@ -84,7 +84,7 @@ const Formulary = () => {
                 </div>
                 
                 <div className="buttons">
-                    <button onClick={() => reset()}>Limpiar</button>
+                    <button type="button" onClick={() => reset()}>Limpiar</button>
 
                     <button 
                         type="submit"
