@@ -1,9 +1,11 @@
+import '../styles/CustomHeader.css';
+
 const CustomHeader = () => {
 
     return (
-        <div>
+        <header className="header">
             <h1>Delusion List</h1>
-        </div>
+        </header>
     );
 }
 

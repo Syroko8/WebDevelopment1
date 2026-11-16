@@ -3,6 +3,7 @@ import { deleteItem, getItems } from "../services/itemService";
 import { contentTypes, type Item } from "../schemas/ItemSchema";
 import { useState } from "react";
 import ItemCard from "./ItemCard";
+import '../styles/ItemList.css';
 
 const ItemList = (
     {onItemEdition} : {onItemEdition: (item: Item) => void}

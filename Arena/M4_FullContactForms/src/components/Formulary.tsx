@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contentStates, contentTypes, ItemSchema, type CreateItemInput, type Item } from "../schemas/ItemSchema";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createItem, updateItem } from "../services/itemService";
+import '../styles/Formulary.css';
 
 const Formulary = (
     {itemToEdit, onCancelEdit}:
@@ -44,7 +45,7 @@ const Formulary = (
     }
 
     return (
-        <>
+        <div className="formulary-wrapper">
             <form onSubmit={handleSubmit((data) => mutation.mutate(data))} noValidate>
                 {/** Title field */}
                 <div className="field">
@@ -131,7 +132,7 @@ const Formulary = (
                     </button>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 

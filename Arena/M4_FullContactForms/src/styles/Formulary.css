@@ -1,0 +1,145 @@
+/* ===== FORMULARY STICKY WRAPPER ===== */
+.formulary-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* ===== FORM CARD ===== */
+form {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(30, 60, 120, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ===== FIELD WRAPPER ===== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ===== INPUTS & SELECTS ===== */
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #d1ddf0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  background: #f8faff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  background: #ffffff;
+}
+
+.field input::placeholder {
+  color: #9ca3af;
+}
+
+/* ===== ERROR & SUCCESS MESSAGES ===== */
+.error {
+  font-size: 0.78rem;
+  color: #ef4444;
+  margin-top: 0.1rem;
+}
+
+.ok {
+  font-size: 0.85rem;
+  color: #22c55e;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===== BUTTON ROW ===== */
+.buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid #d1ddf0;
+  background: #f1f5ff;
+  color: #374151;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.buttons button:hover {
+  background: #e0e9ff;
+  border-color: #93b4f0;
+}
+
+.buttons .submit-btn {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.buttons .submit-btn:hover:not(:disabled) {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.buttons .submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== SPINNER ===== */
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

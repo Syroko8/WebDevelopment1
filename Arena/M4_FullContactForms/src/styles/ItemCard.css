@@ -1,0 +1,79 @@
+/* ===== ITEM CARD ===== */
+.item-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: 0 2px 10px rgba(30, 60, 120, 0.07);
+  border: 1.5px solid #e4ecfb;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.item-card:hover {
+  box-shadow: 0 6px 20px rgba(30, 60, 120, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ===== TEXT FIELDS ===== */
+.item-card .title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 0.15rem;
+}
+
+.item-card .author_studio {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.item-card .state {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.item-card .rating {
+  font-size: 0.82rem;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.item-card .modify-btn,
+.item-card .delete-btn {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid;
+  transition: background 0.18s, color 0.18s;
+}
+
+.item-card .modify-btn {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.item-card .modify-btn:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.item-card .delete-btn {
+  background: #fff1f1;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.item-card .delete-btn:hover {
+  background: #fee2e2;
+  border-color: #f87171;
+}
+

@@ -1,4 +1,5 @@
 import type { Item } from "../schemas/ItemSchema";
+import '../styles/ItemCard.css';
 
 export interface itemProp extends Item {
     onModify: () => void,
