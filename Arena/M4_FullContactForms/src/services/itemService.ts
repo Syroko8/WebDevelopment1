@@ -36,12 +36,8 @@ async function parseAndValidate<T>(
 }
 
 export async function getItems(): Promise<Item[]> {
-    try {
-        const response =   await fetch(ITEMS_ENDPOINT);
-        return await parseAndValidate(response, ItemListSchema)
-    } catch (error) {
-        throw new Error("Unable to get response.");
-    } 
+    const response =   await fetch(ITEMS_ENDPOINT);
+    return await parseAndValidate(response, ItemListSchema)
 }
 
 
@@ -66,4 +62,10 @@ export async function updateItem(
     });
 
     return parseAndValidate(response, ItemResponseSchema);
+}
+
+export async function deleteItem(id: string): Promise<void> {
+    await fetch(`${ITEMS_ENDPOINT}/${id}`, {
+        method: "DELETE",
+    });
 }
