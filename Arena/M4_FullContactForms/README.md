@@ -1,75 +1,28 @@
-# React + TypeScript + Vite
+# Delusion List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Misión M4 · Full Contact Forms — Web Development I.
 
-Currently, two official plugins are available:
+## Cómo probarlo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Se debe lanzar el servidor de datos con `npx json-server db.json --port 4000` y el proyecto con `npm run dev`.
+Una vez abierto en el navegador, se pueden añadir obras (animes, mangas, libros) mediante el formulario de la izquierda, indicando su título, tipo, estado, autor/estudio y valoración.
+Los items registrados aparecen en la lista de la derecha, donde pueden ser modificados o eliminados.
+Al pulsar 'Modificar' en un item, el formulario se rellena con sus datos para su edición.
 
-## React Compiler
+## Uso de IA
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Se empleó Gemini para un atapa previa de exploración sobre opciones posibles y realistas para el proyecto dado el temario de la asignatura.
+Se emplearon Gemini y Claude Sonnet para realizar correcciones en las interacciones entre la interfaz y el servicio.
 
-## Expanding the ESLint configuration
+Por último se empleó claude para realizar retoques en el estilado de los componentes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Autopsia
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Para pasar el item a editar desde `ItemList` hasta `Formulary`, se optó por elevar el estado a `App`, que almacena el item completo como objeto y lo pasa como prop al formulario.
+Se planteó pasar únicamente el `id` del item y hacer un fetch independiente desde `Formulary` para obtener sus datos, pero esto habría supuesto una petición adicional innecesaria, ya que los datos ya estaban disponibles en la lista cargada por `ItemList`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. Para eliminar un item, la mutación de borrado se gestiona dentro de `ItemList`, donde ya se dispone del `id` correspondiente a través de las props de cada `ItemCard`.
+Se planteó delegar la eliminación al componente `Formulary` mediante su `useMutation`, pero esto habría costado innecesariamente tener que elevar el estado a `App` y ser pasado como prop a `Formulary`, tal y como se hace con las modificaciones de los items.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+## Authors
+[Nicolás Puebla](https://github.com/Syroko8)
