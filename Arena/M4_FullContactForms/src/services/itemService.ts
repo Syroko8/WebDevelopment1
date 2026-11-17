@@ -13,7 +13,7 @@ export interface itemInfo {
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 if (!BASE_URL) {
-  throw new Error("No environment variable VITE_API_URL set.");
+    throw new Error("No environment variable VITE_API_URL set.");
 }
 
 const ITEMS_ENDPOINT = `${BASE_URL}/items`;
@@ -30,13 +30,13 @@ async function parseAndValidate<T>(
     const parsed = schema.safeParse(rawData);
 
     if (!parsed.success) {
-        throw new Error("Data error: unexpected data structure.");    
+        throw new Error("Data error: unexpected data structure.");
     }
     return parsed.data;
 }
 
 export async function getItems(): Promise<Item[]> {
-    const response =   await fetch(ITEMS_ENDPOINT);
+    const response = await fetch(ITEMS_ENDPOINT);
     return await parseAndValidate(response, ItemListSchema)
 }
 
@@ -44,7 +44,7 @@ export async function getItems(): Promise<Item[]> {
 export async function createItem(newItem: CreateItemInput): Promise<Item> {
     const response = await fetch(ITEMS_ENDPOINT, {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newItem)
     });
 
@@ -55,7 +55,7 @@ export async function updateItem(
     id: string,
     updates: Partial<CreateItemInput>
 ) {
-    const response = await fetch(`${ITEMS_ENDPOINT}/${id}`,{
+    const response = await fetch(`${ITEMS_ENDPOINT}/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updates),
@@ -65,7 +65,11 @@ export async function updateItem(
 }
 
 export async function deleteItem(id: string): Promise<void> {
-    await fetch(`${ITEMS_ENDPOINT}/${id}`, {
+    const response = await fetch(`${ITEMS_ENDPOINT}/${id}`, {
         method: "DELETE",
     });
+
+    if (!response.ok) {
+        throw new Error(`Error al eliminar el elemento: (${response.status})`);
+    }
 }

@@ -5,7 +5,7 @@ Misión M4 · Full Contact Forms — Web Development I.
 ## Cómo probarlo
 
 Se debe lanzar el servidor de datos con `npx json-server db.json --port 4000` y el proyecto con `npm run dev`.
-Una vez abierto en el navegador, se pueden añadir obras (animes, mangas, libros) mediante el formulario de la izquierda, indicando su título, tipo, estado, autor/estudio y valoración.
+Una vez abierto en el navegador, se pueden añadir obras (series, mangas, libros, películas), mediante el formulario de la izquierda, indicando su título, tipo, estado, autor/estudio y valoración.
 Los items registrados aparecen en la lista de la derecha, donde pueden ser modificados o eliminados.
 Al pulsar 'Modificar' en un item, el formulario se rellena con sus datos para su edición.
 

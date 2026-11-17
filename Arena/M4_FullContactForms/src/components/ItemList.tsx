@@ -47,7 +47,7 @@ const ItemList = (
             </div>
 
             {isFetching && !isPending && <span className="spinner small" aria-label="Actualizando" />}
-            {deleteMutation.isError && <p role="alert" className="error">No se pudo guardar: {deleteMutation.error.message}</p>}
+            {deleteMutation.isError && <p role="alert" className="error">No se pudo eliminar: {deleteMutation.error.message}</p>}
             
             <div className="content">
                 {isPending && <span className="spinner"></span>}
