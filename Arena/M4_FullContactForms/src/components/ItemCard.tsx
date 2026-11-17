@@ -1,4 +1,4 @@
-import { MdMenuBook, MdAutoStories, MdTv, MdMovie } from 'react-icons/md';
+import { MdMenuBook, MdAutoStories, MdTv, MdMovie, MdSelectAll } from 'react-icons/md';
 import type { Item } from "../schemas/ItemSchema";
 import '../styles/ItemCard.css';
 
@@ -22,6 +22,7 @@ const ItemCard = (itemInfo: itemProp) => {
                 {itemInfo.type === "Manga"   && <MdAutoStories />}
                 {itemInfo.type === "Serie"   && <MdTv />}
                 {itemInfo.type === "Pelicula" && <MdMovie />}
+                {itemInfo.type === "Comic" && <MdSelectAll />}
             </div>
             <button className="modify-btn" onClick={itemInfo.onModify}>Modificar</button>
             <button className="delete-btn" onClick={itemInfo.onDelete}>Eliminar</button>
